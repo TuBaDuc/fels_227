@@ -44,3 +44,7 @@ bower.json
 
 # Ignore test files
 test/controllers/static_pages_controller_test.rb
+test/models/user_test.rb
+test/fixtures/users.yml
+test/controllers/sessions_controller_test.rb
+test/controllers/users_controller_test.rb

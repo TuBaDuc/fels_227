@@ -46,12 +46,13 @@ en:
   #header
   logout: "Log out"
   profile: "Profile"
-  settings: "Settings"
+  edit_profile: "Edit Profile"
   users: "Users"
   help: "Help"
   home: "Home"
   invalid_email_password: "Invalid email/password combination"
   logo_title: "PROJECT 1"
+  account: "Account"
   #footer
   about: "About"
   contact: "Contact"
@@ -63,3 +64,9 @@ en:
   #home
   intro: "This is the home page for the"
   intro_link_text: "Framgia E-learning System"
+  #error message
+  error_intro: "The form contains "
+  #user info
+  view_my_profile_link: "view my profile"
+  user_nil_mess: "User is not found"
+  error_permission_mess: "Permission error"
