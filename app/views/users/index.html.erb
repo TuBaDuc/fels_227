@@ -1,0 +1,19 @@
+<% provide :title, t(:all_user) %>
+<h1><%= t :all_user %></h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_tag(users_path, method: :get) do %>
+      <%= text_field_tag :name, params[:name], class: "form-control" %>
+      <%= submit_tag t(:search), name: nil, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+<%= will_paginate %>
+
+<ul class="users">
+  <%= render @users %>
+</ul>
+
+<%= will_paginate %>

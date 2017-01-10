@@ -1,4 +1,10 @@
 class User < ApplicationRecord
+  has_many :active_relationships, class_name: Relationship.name,
+    foreign_key: :follower_id, dependent: :destroy
+  has_many :passive_relationships, class_name: Relationship.name,
+    foreign_key: :followed_id, dependent: :destroy
+  has_many :following, through: :active_relationships,  source: :followed
+  has_many :followers, through: :passive_relationships, source: :follower
   attr_accessor :remember_token, :reset_token
   before_save   :downcase_email
   validates :name, presence: true, length: {maximum: 50}
@@ -42,6 +48,26 @@ class User < ApplicationRecord
     self.reset_token = User.new_token
     update_attribute :reset_digest, User.digest(reset_token)
     update_attribute :reset_sent_at, Time.zone.now
+  end
+
+  def self.search name
+    if name
+      where("name LIKE ?", "%#{name}%")
+    else
+      order("id DESC")
+    end
+  end
+
+  def follow other_user
+    following << other_user
+  end
+
+  def unfollow other_user
+    following.delete other_user
+  end
+
+  def following? other_user
+    following.include?other_user
   end
 
   private

@@ -67,7 +67,7 @@ en:
   #error message
   error_intro: "The form contains "
   #user info
-  view_my_profile_link: "view my profile"
+  view_my_profile_link: "View my profile"
   user_nil_mess: "User is not found"
   error_permission_mess: "Permission error"
   #edit profile
@@ -76,3 +76,11 @@ en:
   user_edit_profile_updated: "Profile updated"
   please_login: "Please login"
   change_profile_pic: "Change"
+  #all user
+  all_user: "All User"
+  search: "Search"
+  #follow unfollow
+  follow_btn: "Follow"
+  unfollow_btn: "Unfollow"
+  following_text: "following"
+  followers_text: "followers"

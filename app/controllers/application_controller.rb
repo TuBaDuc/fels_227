@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   def load_user
-    @user = User.find_by id: params[:id]
+    @user = User.find_by id: params[:id] || params[:user_id]
     if @user.nil?
       flash[:danger] = t :user_nil_mess
       redirect_to root_url
