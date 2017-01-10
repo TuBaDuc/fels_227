@@ -25,7 +25,8 @@ class ApplicationController < ActionController::Base
   end
 
   def check_correct_user
-    unless current_user?(@user)
+    return true if current_user.is_admin?
+    unless current_user?@user
       flash[:danger] = t :error_permission_mess
       redirect_to root_url
     end

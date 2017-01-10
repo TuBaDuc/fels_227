@@ -70,3 +70,9 @@ en:
   view_my_profile_link: "view my profile"
   user_nil_mess: "User is not found"
   error_permission_mess: "Permission error"
+  #edit profile
+  user_edit_title: "Update Profile"
+  user_edit_save_change: "Save changes"
+  user_edit_profile_updated: "Profile updated"
+  please_login: "Please login"
+  change_profile_pic: "Change"
