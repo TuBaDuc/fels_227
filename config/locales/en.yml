@@ -20,4 +20,46 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  system_name: "Framgia E-learning System"
+  greeting: "Welcome to"
+  signup: "Sign up"
+  create_my_account: "Create my account"
+  confirmation: "Confirmation"
+  #Help
+  help_title: "Help"
+  help_intro: "Get help on the Ruby on Rails Tutorial at the"
+  help_intro_link_text: "Rails Tutorial help section."
+
+  #About
+  about_title: "About"
+  about_intro: "The Ruby on Rails Tutorial is a book and screencast series
+      to teach web development with Ruby on Rails.
+      This is the sample application for the tutorial."
+  #Contact
+  contact_title: "Contact"
+  contact_intro: "Contact the Ruby on Rails Tutorial about the sample app at the"
+  contact_intro_link: contact page
+  #login:
+  login: "Log in"
+  signupnow: "Sign up now!"
+  remember: "Remember me on this computer"
+  #header
+  logout: "Log out"
+  profile: "Profile"
+  settings: "Settings"
+  users: "Users"
+  help: "Help"
+  home: "Home"
+  invalid_email_password: "Invalid email/password combination"
+  logo_title: "PROJECT 1"
+  #footer
+  about: "About"
+  contact: "Contact"
+  news: "News"
+  project_name: "The "
+  project_name_link_text: "Project 1"
+  author: "by "
+  author_link_text: "Tu Ba Duc"
+  #home
+  intro: "This is the home page for the"
+  intro_link_text: "Framgia E-learning System"
