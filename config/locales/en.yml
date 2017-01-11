@@ -84,3 +84,12 @@ en:
   unfollow_btn: "Unfollow"
   following_text: "following"
   followers_text: "followers"
+  #all user namager
+  all_user_manager: "All User Manager"
+  delete_confirm: "You sure?"
+  no_users_found: "No users found!"
+  admin_label: "Admin"
+  user_label: "User"
+  delete_label: "Delete"
+  user_deleted_success: "User deleted"
+  user_deleted_fail: "User delete fail"
