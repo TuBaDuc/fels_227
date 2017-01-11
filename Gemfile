@@ -19,6 +19,7 @@ gem "mini_magick", "4.5.1"
 gem "fog", "1.38.0"
 gem "bootstrap-will_paginate", "0.0.10"
 gem "rubocop", "~> 0.46.0", require: false
+gem "config"
 
 # Use Puma as the app server
 gem "puma", "3.4.0"
