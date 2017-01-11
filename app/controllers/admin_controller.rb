@@ -1,3 +1,0 @@
-class AdminController < CommonUserController
-
-end
