@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :load_user, only: [:show]
+  before_action :load_user, only: [:show, :update, :edit]
+  before_action :logged_in_user, :check_correct_user, only: [:edit, :update]
 
   def new
     @user = User.new
@@ -15,7 +16,18 @@ class UsersController < ApplicationController
   end
 
   def show
+  end
 
+  def edit
+  end
+
+  def update
+    if @user.update_attributes user_params
+      flash[:success] = t :user_edit_profile_updated
+      redirect_to @user
+    else
+      render :edit
+    end
   end
 
   private
