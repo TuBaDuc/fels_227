@@ -15,5 +15,10 @@ Rails.application.routes.draw do
   delete "/logout",  to: "sessions#destroy"
   get "/signup",  to: "users#new"
   post "/signup",  to: "users#create"
+  resources :users do
+    resources :following, only: [:index]
+    resources :followers, only: [:index]
+  end
   resources :users
+  resources :relationships,  only: [:create, :destroy]
 end

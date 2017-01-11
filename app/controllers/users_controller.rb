@@ -30,6 +30,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def index
+    @users = User.search(params[:name]).order(name: :desc)
+      .paginate page: params[:page], per_page: Settings.user_entry_per_page
+  end
+
   private
 
   def user_params
