@@ -3,3 +3,5 @@ user_limit: 10
 admin_user_limit: 20
 admin_category_limit: 9
 admin_word_limit: 20
+user_category_limit: 20
+category_lesson_limit: 5

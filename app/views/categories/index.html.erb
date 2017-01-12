@@ -1,0 +1,28 @@
+<% provide :title, t(:user_categories_title) %>
+<h3><%= t :categories %></h3>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_tag categories_path, method: :get do %>
+      <%= text_field_tag :name, params[:name], class: "form-control" %>
+      <%= submit_tag t(:search), name: nil, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+</br >
+
+<% if @categories.any? %>
+  <table class="table table-hover">
+    <tr>
+      <th><%= t :name %></th>
+      <th><%= t :description %></th>
+      <th></th>
+    </tr>
+    <%= render @categories %>
+  </table>
+  <div class="text-center">
+    <%= will_paginate %>
+  </div>
+<% else %>
+  <%= t :no_category_found %>
+<% end %>
