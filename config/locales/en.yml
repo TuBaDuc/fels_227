@@ -93,3 +93,8 @@ en:
   delete_label: "Delete"
   user_deleted_success: "User deleted"
   user_deleted_fail: "User delete fail"
+  #add category
+  create_category: "Create Category"
+  new_category: "New Category"
+  create_category_success_mess: "Create category success"
+  create_category_fail_mess: "Create category failed"
