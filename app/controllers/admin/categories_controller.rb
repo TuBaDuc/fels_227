@@ -1,11 +1,11 @@
 class Admin::CategoriesController < ApplicationController
   before_action :logged_in_user, :verify_admin
-  before_action :load_category, only: [:edit, :update, :destroy]
+  before_action :load_category, except: [:index, :new, :create]
 
   def index
-    @categories = Category.order(name: :desc)
+    @categories = Category.search(params[:name]).order(name: :desc)
       .paginate page: params[:page],
-        per_page: Settings.admin_category_entry_per_page
+        per_page: Settings.admin_category_limit
   end
 
   def new
@@ -43,6 +43,12 @@ class Admin::CategoriesController < ApplicationController
       flash[:danger] = t :category_delete_fail_mess
     end
     redirect_to admin_categories_path
+  end
+
+  def show
+    @words = @category.words.order(created_at: :desc)
+      .paginate page: params[:page],
+        per_page: Settings.admin_word_limit
   end
 
   private
