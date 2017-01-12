@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
   end
 
   def load_category
-    @category = Category.find_by id: params[:id]
+    @category = Category.find_by id: params[:id] || params[:category_id]
     if @category.nil?
       flash[:danger] = t :category_nil_mess
       back = current_user.is_admin ? admin_categories_path : categories_path

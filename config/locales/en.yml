@@ -123,7 +123,7 @@ en:
   description_label: "Description: "
   detail_category_title: "Detail category"
   #user show search category
-  start_label: "Start"
+  learn_label: "Learn"
   user_categories_title: "Categories"
   no_lesson_found: "No lesson found"
   lessons_h3_title: "Lessons"
@@ -132,3 +132,11 @@ en:
   start_new_lesson: "Start new lesson"
   create_lesson_success_mess: "Create lesson success"
   create_lesson_fail_mess: "Create lesson failed"
+  lesson_process_label: "Process"
+  #lesson
+  completed_label: "Completed"
+  learning_label: "Learning"
+  view_results_label: "View Result"
+  continue_label: "Continue"
+  category_total_lessons: "Total lessons"
+

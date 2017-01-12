@@ -1,0 +1,35 @@
+<tr>
+  <td>
+    <b>#<%= lesson.id %></b>
+  </td>
+  <td>
+    <% if lesson.is_complete %>
+      <span class="text-success">
+        <%= t :completed_label %> (<%= rate_result_lesson lesson %>)
+      </span>
+    <% else %>
+      <span class="text-info"><%= t :learning_label %></span>
+    <% end %>
+  </td>
+  <td>
+    <span></span>
+  </td>
+  <td class="text-right">
+    <% if lesson.is_complete %>
+      <%= link_to lesson, class: "btn btn-default btn-xs" do %>
+        <span class="glyphicon glyphicon-eye-open"></span>
+        <%= t :view_results_label %>
+      <% end %>
+    <% else %>
+      <%= link_to lesson, class: "btn btn-primary btn-xs" do %>
+        <span class="glyphicon glyphicon-play"></span>
+        <%= t :continue_label %>
+      <% end %>
+    <% end %>
+    <%= link_to lesson, method: :delete,
+      class: "btn btn-danger btn-xs", data: {confirm: t(:delete_confirm)} do %>
+      <span class="glyphicon glyphicon-remove"></span>
+      <%= t :delete_label %>
+    <% end %>
+  </td>
+</tr>
