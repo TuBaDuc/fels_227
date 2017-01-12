@@ -1,3 +1,4 @@
 follow_entry_per_page: 10
 user_entry_per_page: 10
 admin_user_entry_per_page: 20
+admin_category_entry_per_page: 9

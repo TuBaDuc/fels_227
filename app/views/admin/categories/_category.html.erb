@@ -1,0 +1,21 @@
+<tr>
+  <td class="category-name">
+    <%= category.name %>
+  </td>
+  <td class="category-description">
+    <%= category.description %>
+  </td>
+  <td class="col-actions text-right">
+    <%= link_to [:admin, category], class: "btn btn-info btn-xs" do %>
+      </span> <%= t :details %>
+    <% end %>
+    <%= link_to [:edit, :admin, category],
+      class: "btn btn-default btn-xs" do %>
+      <%= t :edit_label %>
+    <% end %>
+    <%= link_to admin_category_path(category), method: :delete,
+      class: "btn btn-danger btn-xs", data: {confirm: t(:delete_confirm)} do %>
+      <%= t :delete_label %>
+    <% end %>
+  </td>
+</tr>
