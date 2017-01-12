@@ -5,6 +5,9 @@
   <td class="category-description">
     <%= category.description %>
   </td>
+  <td class="category-word-total">
+    <%= category.words.size %>
+  </td>
   <td class="col-actions text-right">
     <%= link_to [:admin, category], class: "btn btn-info btn-xs" do %>
       </span> <%= t :details %>

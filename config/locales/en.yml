@@ -53,6 +53,8 @@ en:
   invalid_email_password: "Invalid email/password combination"
   logo_title: "PROJECT 1"
   account: "Account"
+  manager_menu: "Manager"
+  category_menu: "Categories"
   #footer
   about: "About"
   contact: "Contact"
@@ -113,3 +115,10 @@ en:
   category_update_fail_mess: "Update category failed"
   category_delete_success_mess: "Delete category success"
   category_delete_fail_mess: "Delete category failed"
+  category_word_total_label: "Total words"
+  #admin show detail to add word
+  add_a_word: "Add a word"
+  words: "Words"
+  no_word_found: "No word found"
+  description_label: "Description: "
+  detail_category_title: "Detail category"
