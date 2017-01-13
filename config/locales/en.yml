@@ -166,3 +166,14 @@ en:
     learned: "Learned"
     not_learn: "Not learn"
   filter_btn: "Filter"
+  #lesson
+  lesson_title: "Lesson"
+  lesson_category: "Category"
+  correct_answer: "Correct answer"
+  total_word: "Total word"
+  submit_btn: "Submit"
+  lesson_nil_mess: "Lesson is not found"
+  lesson_delete_success_mes: "Lesson delete success"
+  lesson_delete_fail_mes: "Lesson delete failed"
+  min_words_for_lesson_mess: "Don't enough vocabulary to create a lesson. \
+    Require more than %{min} words."

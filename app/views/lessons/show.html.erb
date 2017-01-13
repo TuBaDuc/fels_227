@@ -1,0 +1,24 @@
+<h1><%= t :lesson_title %></h1>
+<p>
+  <b><%= t :lesson_category %>:</b>
+  <%= link_to @lesson.category.name, @lesson.category %>
+</p>
+<% if @lesson.is_complete %>
+  <p>
+    <b><%= t :correct_answer %>:</b>
+    <%= [@lesson.answers.correct.size, @lesson.answers.size].join "/" %>
+    <%= t :words %>
+  </p>
+<% end %>
+<p>
+  <b><%= t :total_word %>:</b>
+  <%= @lesson.results.size %>
+  <%= t :words %>
+</p>
+<%= form_for @lesson do |f| %>
+  <%= f.hidden_field :is_complete, value: true %>
+  <%= f.fields_for :results do |result| %>
+    <%= render "question_form", f: result %>
+  <% end %>
+  <%= f.submit t(:submit_btn), class: "btn btn-primary" unless @lesson.is_complete %>
+<% end %>
