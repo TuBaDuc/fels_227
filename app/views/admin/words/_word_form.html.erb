@@ -6,10 +6,16 @@
     <%= f.text_field :content, class: "form-control" %>
   </div>
   <%= f.label :answers %>
-  <% for i in 1..Settings.default_answer_limit do %>
-    <%= f.fields_for :answers, @word.answers.build do |builder| %>
-      <%= render "answer_fields", f: builder %>
+  <% if @word.new_record? %>
+    <% for i in 1..Settings.default_answer_limit do %>
+      <%= f.fields_for :answers, @word.answers.build do |builder| %>
+        <%= render "answer_fields", f: builder %>
+      <% end %>
     <% end %>
+  <% else %>
+      <%= f.fields_for :answers, @word.answers do |builder| %>
+        <%= render "answer_fields", f: builder %>
+      <% end %>
   <% end %>
   <p>
     <%= link_to_add_fields(

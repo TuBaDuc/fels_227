@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     root "users#index"
     resources :users, only: [:index, :destroy]
     resources :categories do
-      resources :words
+      resources :words, except: [:index, :show]
     end
   end
   resources :categories, only: [:index, :show] do

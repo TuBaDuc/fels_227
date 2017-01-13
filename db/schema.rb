@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170113024214) do
+ActiveRecord::Schema.define(version: 20170116085635) do
 
   create_table "answers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "content"
@@ -49,6 +49,17 @@ ActiveRecord::Schema.define(version: 20170113024214) do
     t.index ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
   end
 
+  create_table "results", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "word_id"
+    t.integer  "lesson_id"
+    t.integer  "answer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["answer_id"], name: "index_results_on_answer_id", using: :btree
+    t.index ["lesson_id"], name: "index_results_on_lesson_id", using: :btree
+    t.index ["word_id"], name: "index_results_on_word_id", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "email"
@@ -73,5 +84,8 @@ ActiveRecord::Schema.define(version: 20170113024214) do
   add_foreign_key "answers", "words"
   add_foreign_key "lessons", "categories"
   add_foreign_key "lessons", "users"
+  add_foreign_key "results", "answers"
+  add_foreign_key "results", "lessons"
+  add_foreign_key "results", "words"
   add_foreign_key "words", "categories"
 end
