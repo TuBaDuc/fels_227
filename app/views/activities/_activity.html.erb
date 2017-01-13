@@ -1,0 +1,11 @@
+<p>
+  <% if current_user?activity.user%>
+    <%= t :you_text %>
+  <% else %>
+    <%= t activity.user.name %>
+  <% end %>
+  <%= activity.enum_to_string %>
+  <%= raw link_to_activity(activity.object) unless activity.object.nil? %>
+  - <%= t :at_text %>
+  <%= time_ago_in_words activity.created_at %>
+</p>

@@ -1,0 +1,11 @@
+<h3><%= t :activities_title %></h3>
+<hr/>
+
+<% if activities.any? %>
+  <%= render activities  %>
+  <div class="text-center">
+    <%= will_paginate activities %>
+  </div>
+<% else %>
+  <%= t :no_activity_found %>
+<% end %>

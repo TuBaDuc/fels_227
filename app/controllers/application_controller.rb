@@ -40,4 +40,9 @@ class ApplicationController < ActionController::Base
       redirect_to back
     end
   end
+
+  def add_activity type, object = nil, user = current_user
+    Activity.create! action_type: type,
+      object: object.nil? ? nil : object.activity_info, user_id: user.id
+  end
 end

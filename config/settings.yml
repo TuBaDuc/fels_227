@@ -9,3 +9,4 @@ default_answer_limit: 2
 correct_answers_min: 1
 word_of_list_limit: 20
 word_of_lesson_limit: 3
+home_activities_limit: 30
