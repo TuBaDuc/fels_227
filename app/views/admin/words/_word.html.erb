@@ -1,0 +1,21 @@
+<tr>
+  <td class="word-content">
+    <%= word.content %>
+  </td>
+  <td class="word-meaning">
+    <%= word.answers.correct.first.content %>
+  </td>
+  <td class="col-actions text-right">
+    <%= link_to [:edit, :admin, word.category, word],
+      class: "btn btn-info btn-xs" do %>
+      <span class="glyphicon glyphicon-edit"></span>
+      <%= t :edit_label %>
+    <% end %>
+    <%= link_to [:admin, word.category, word],
+      class: "btn btn-danger btn-xs", data: {confirm: t(:delete_confirm)},
+        method: :delete do %>
+      <span class="glyphicon glyphicon-remove"></span>
+      <%= t :delete_label %>
+    <% end %>
+  </td>
+</tr>

@@ -1,0 +1,21 @@
+<%= form_for [:admin, @word.category, @word] do |f| %>
+  <%= render partial: "shared/error_messages", object: @word, as: :object %>
+  <%= f.hidden_field :category_id, value: @word.category.id %>
+  <div class="form-group">
+    <%= f.label :content %>
+    <%= f.text_field :content, class: "form-control" %>
+  </div>
+  <%= f.label :answers %>
+  <% for i in 1..Settings.default_answer_limit do %>
+    <%= f.fields_for :answers, @word.answers.build do |builder| %>
+      <%= render "answer_fields", f: builder %>
+    <% end %>
+  <% end %>
+  <p>
+    <%= link_to_add_fields(
+      raw("<span class='glyphicon glyphicon-plus-sign'></span> #{t :add_answer}"),
+      f, :answers) %>
+  </p>
+  <br/>
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>
