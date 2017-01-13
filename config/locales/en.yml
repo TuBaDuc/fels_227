@@ -119,6 +119,7 @@ en:
   #admin show detail to add word
   add_a_word: "Add a word"
   words: "Words"
+  meaning: "Meaning"
   no_word_found: "No word found"
   description_label: "Description: "
   detail_category_title: "Detail category"
@@ -139,4 +140,11 @@ en:
   view_results_label: "View Result"
   continue_label: "Continue"
   category_total_lessons: "Total lessons"
+  # word
+  add_new_word: "Add new word"
+  add_answer: "Add answer"
+  create_word_success_mess: "Create word success"
+  create_word_fail_mess: "Create word failed"
+  sharp_mark: "#"
+  must_choose_a_correct_answer: "Please choose a correct answer"
 

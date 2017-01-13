@@ -18,16 +18,18 @@
 </div>
 <br/>
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title"><%= t :words %></h3>
-  </div>
-  <% if @words.any? %>
+<% if @words.any? %>
+  <table class="table table-hover">
+    <tr>
+      <th><%= t :words %></th>
+      <th><%= t :meaning %></th>
+      <th></th>
+    </tr>
     <%= render @words %>
-    <div class="text-center">
-      <%= will_paginate @words %>
-    </div>
-  <% else %>
-    <%= t :no_word_found %>
-  <% end %>
-</div>
+  </table>
+  <div class="text-center">
+    <%= will_paginate @words %>
+  </div>
+<% else %>
+  <%= t :no_word_found %>
+<% end %>
