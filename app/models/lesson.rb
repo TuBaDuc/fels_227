@@ -1,4 +1,6 @@
 class Lesson < ApplicationRecord
+  include Rails.application.routes.url_helpers
+
   belongs_to :category
   belongs_to :user
   has_many :words, through: :results
@@ -9,6 +11,10 @@ class Lesson < ApplicationRecord
   before_create :create_words
 
   scope :learned_by, -> user_id {where user_id: user_id}
+
+  def activity_info
+    "\##{self.id},#{lesson_path self}|#{self.category.activity_info}"
+  end
 
   private
   def create_words

@@ -9,6 +9,7 @@ class LessonsController < ApplicationController
   def create
     @lesson = current_user.lessons.build category_id: @category.id
     if @lesson.save
+      add_activity Activity.action_types[:start_lesson], @lesson
       flash[:success] = t :create_lesson_success_mess
       redirect_to @lesson
     else
@@ -19,6 +20,7 @@ class LessonsController < ApplicationController
 
   def destroy
     if @lesson.destroy
+      add_activity Activity.action_types[:destroy_lesson], @lesson
       flash[:success] = t :lesson_delete_success_mes
     else
       flash[:danger] = t :lesson_delete_fail_mes
@@ -28,6 +30,7 @@ class LessonsController < ApplicationController
 
   def update
     if @lesson.update_attributes lesson_params
+      add_activity Activity.action_types[:finish_lesson], @lesson
       flash[:success] = t :lesson_submit_success_mess
     else
       if @lesson.present?
