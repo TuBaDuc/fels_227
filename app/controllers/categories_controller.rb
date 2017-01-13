@@ -8,5 +8,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @lessons = @category.lessons.learned_by(current_user)
+      .paginate page: params[:page], per_page: Settings.category_lesson_limit
   end
 end
