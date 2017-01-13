@@ -5,14 +5,21 @@
   <td>
     <% if lesson.is_complete %>
       <span class="text-success">
-        <%= t :completed_label %> (<%= rate_result_lesson lesson %>)
+        <%= t :completed_label %>
       </span>
     <% else %>
       <span class="text-info"><%= t :learning_label %></span>
     <% end %>
   </td>
   <td>
-    <span></span>
+    <% if lesson.is_complete %>
+      <span class="text-success">
+        <%= [lesson.answers.correct.size, lesson.answers.size].join("/") + " " +
+          t("words") %>
+      </span>
+    <% else %>
+      <span></span>
+    <% end %>
   </td>
   <td class="text-right">
     <% if lesson.is_complete %>

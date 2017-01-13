@@ -133,7 +133,7 @@ en:
   start_new_lesson: "Start new lesson"
   create_lesson_success_mess: "Create lesson success"
   create_lesson_fail_mess: "Create lesson failed"
-  lesson_process_label: "Process"
+  lesson_result_label: "Result"
   #lesson
   completed_label: "Completed"
   learning_label: "Learning"
@@ -177,3 +177,6 @@ en:
   lesson_delete_fail_mes: "Lesson delete failed"
   min_words_for_lesson_mess: "Don't enough vocabulary to create a lesson. \
     Require more than %{min} words."
+  #lesson submit
+  lesson_submit_success_mess: "Lesson submit success"
+  lesson_submit_fail_mess: "Lesson submit failed"
