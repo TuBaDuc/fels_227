@@ -56,11 +56,4 @@ class Admin::CategoriesController < ApplicationController
     params.require(:category).permit :name, :description, :photo
   end
 
-  def load_category
-    @category = Category.find_by id: params[:id]
-    if @category.nil?
-      flash[:danger] = t :category_nil_mess
-      redirect_to admin_categories_path
-    end
-  end
 end

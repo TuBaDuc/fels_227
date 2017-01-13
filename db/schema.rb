@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170112033126) do
+ActiveRecord::Schema.define(version: 20170112081159) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -18,6 +18,16 @@ ActiveRecord::Schema.define(version: 20170112033126) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "photo"
+  end
+
+  create_table "lessons", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.boolean  "is_complete", default: false
+    t.integer  "category_id"
+    t.integer  "user_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.index ["category_id"], name: "index_lessons_on_category_id", using: :btree
+    t.index ["user_id"], name: "index_lessons_on_user_id", using: :btree
   end
 
   create_table "relationships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -51,5 +61,7 @@ ActiveRecord::Schema.define(version: 20170112033126) do
     t.index ["category_id"], name: "index_words_on_category_id", using: :btree
   end
 
+  add_foreign_key "lessons", "categories"
+  add_foreign_key "lessons", "users"
   add_foreign_key "words", "categories"
 end

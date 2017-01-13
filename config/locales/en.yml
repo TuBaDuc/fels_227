@@ -122,3 +122,13 @@ en:
   no_word_found: "No word found"
   description_label: "Description: "
   detail_category_title: "Detail category"
+  #user show search category
+  start_label: "Start"
+  user_categories_title: "Categories"
+  no_lesson_found: "No lesson found"
+  lessons_h3_title: "Lessons"
+  lesson_label: "Lessons"
+  lesson_status_label: "Status"
+  start_new_lesson: "Start new lesson"
+  create_lesson_success_mess: "Create lesson success"
+  create_lesson_fail_mess: "Create lesson failed"
