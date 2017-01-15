@@ -154,4 +154,11 @@ en:
   word_nil_mess: "Word is not found"
   word_delete_success_mess: "Delete word success"
   word_delete_fail_mess: "Delete word failed"
-
+  #word list
+  no_word_found: "No word found"
+  word_list: "Word List"
+  key_search:
+    all: "All"
+    all_word: "All word"
+    learned: "Learned"
+    not_learn: "Not learn"

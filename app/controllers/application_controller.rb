@@ -40,4 +40,8 @@ class ApplicationController < ActionController::Base
       redirect_to back
     end
   end
+
+  def json_request?
+    request.format.json?
+  end
 end
