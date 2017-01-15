@@ -147,4 +147,11 @@ en:
   create_word_fail_mess: "Create word failed"
   sharp_mark: "#"
   must_choose_a_correct_answer: "Please choose a correct answer"
+  # edit word
+  update_word: "Update word"
+  update_word_success_mess: "Update word success"
+  update_word_fail_mess: "Update word failed"
+  word_nil_mess: "Word is not found"
+  word_delete_success_mess: "Delete word success"
+  word_delete_fail_mess: "Delete word failed"
 
