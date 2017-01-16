@@ -1,0 +1,10 @@
+<div class="input-group fields">
+  <span class="input-group-addon" style="width: 40px">
+    <%= f.check_box :is_correct, class: "answer_field" %>
+  </span>
+  <%= f.text_field :content, class: "form-control" %>
+  <span class="input-group-addon">
+    <%= link_to_remove_fields(
+      raw("<span class=\"glyphicon glyphicon-remove\"></span>"), f) %>
+  </span>
+</div>
