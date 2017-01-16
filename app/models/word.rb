@@ -1,6 +1,7 @@
 class Word < ApplicationRecord
   belongs_to :category
   has_many :answers, dependent: :destroy
+  has_many :results, dependent: :destroy
   accepts_nested_attributes_for :answers, allow_destroy: true,
     reject_if: proc { |attributes| attributes["content"].blank? }
   validates :content, presence: true, length: {maximum: 255}
