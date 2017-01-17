@@ -8,6 +8,16 @@ class Word < ApplicationRecord
   before_validation :must_have_a_correct_answer, :must_have_min_answer,
     :dont_have_duplicate_answer
 
+  scope :all_word, -> user_id{}
+  scope :learned, -> user_id{where "id in
+    (select word_id from answers where is_correct = '1' and id in
+      (select answer_id from results where lesson_id in
+        (select id from lessons where user_id = #{user_id})))"}
+  scope :not_learn, -> user_id{where "id not in
+    (select word_id from answers where is_correct = '1' and id in
+      (select answer_id from results where lesson_id in
+        (select id from lessons where user_id = #{user_id})))"}
+
   private
   def must_have_a_correct_answer
     unless self.answers.
@@ -30,4 +40,5 @@ class Word < ApplicationRecord
         content: duplicate_answer.first.content)
     end
   end
+
 end

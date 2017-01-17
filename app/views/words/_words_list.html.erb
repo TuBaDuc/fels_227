@@ -1,0 +1,14 @@
+<% if words.any? %>
+  <table class="table table-hover">
+    <tr>
+      <th><%= t :words %></th>
+      <th><%= t :meaning %></th>
+    </tr>
+    <%= render words %>
+  </table>
+  <div class="text-center">
+    <%= will_paginate %>
+  </div>
+<% else %>
+  <%= t :no_word_found %>
+<% end %>

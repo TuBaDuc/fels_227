@@ -157,4 +157,12 @@ en:
   word_delete_success_mess: "Delete word success"
   word_delete_fail_mess: "Delete word failed"
   cant_destroy_word: "Can't destroy the word, because having a lesson already started"
-
+  #word list
+  no_word_found: "No word found"
+  word_list: "Word List"
+  key_search:
+    all: "All"
+    all_word: "All word"
+    learned: "Learned"
+    not_learn: "Not learn"
+  filter_btn: "Filter"
