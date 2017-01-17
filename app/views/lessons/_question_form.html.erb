@@ -1,0 +1,30 @@
+<% if @lesson.is_complete %>
+  <div class="panel panel-<%= result_status f.object.answer %>">
+<% else %>
+  <div class="panel panel-default">
+<% end %>
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      <%= f.object.word.content %>
+      <b class="pull-right">#<%= f.options[:child_index] + 1 %></b>
+    </h3>
+  </div>
+  <div class="panel-body">
+    <% f.object.word.answers.each do |answer| %>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :answer_id, answer.id,
+            disabled: @lesson.is_complete %>
+          <% if @lesson.is_complete && f.object.answer == answer %>
+              <span class="<%=  answer.is_correct ? "text-success" :
+                "text-danger" %>">
+                <%= answer.content %>
+              </span>
+          <% else %>
+            <%= answer.content %>
+          <% end %>
+        </label>
+      </div>
+    <% end %>
+  </div>
+</div>

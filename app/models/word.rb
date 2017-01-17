@@ -34,11 +34,15 @@ class Word < ApplicationRecord
   end
 
   def dont_have_duplicate_answer
-    duplicate_answer = self.answers.uniq{|answer| answer.content.squish}
+    all_answer = []
+    self.answers.each do |answer|
+      all_answer << answer.content
+    end
+    duplicate_answer =
+      all_answer.find_all { |answer| all_answer.count(answer) > 1 }
     unless duplicate_answer.size == 0
       errors.add "", I18n.t(:have_duplicate_answer,
-        content: duplicate_answer.first.content)
+        content: duplicate_answer.uniq!.join(","))
     end
   end
-
 end
