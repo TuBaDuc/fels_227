@@ -1,5 +1,11 @@
 <% if @lesson.is_complete %>
-  <div class="panel panel-<%= result_status f.object.answer %>">
+  <% if f.object.answer.nil? %>
+    <div class="panel panel-default">
+  <% elsif f.object.answer.is_correct %>
+    <div class="panel panel-success">
+  <% else %>
+    <div class="panel panel-danger">
+  <% end %>
 <% else %>
   <div class="panel panel-default">
 <% end %>
