@@ -1,4 +1,6 @@
 class Category < ApplicationRecord
+  include Rails.application.routes.url_helpers
+
   has_many :lessons, dependent: :destroy
   has_many :words, dependent: :destroy
 
@@ -9,5 +11,9 @@ class Category < ApplicationRecord
 
   def self.search name
     name ? where("name LIKE ?", "%#{name}%") : all
+  end
+
+  def activity_info
+    "#{self.name},#{category_path self}"
   end
 end

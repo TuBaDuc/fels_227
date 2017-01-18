@@ -16,6 +16,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    @activities = Activity.feed_activities(current_user.id)
+      .order(created_at: :desc).paginate page: params[:page],
+        per_page: Settings.home_activities_limit
   end
 
   def edit
