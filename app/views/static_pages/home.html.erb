@@ -8,7 +8,22 @@
         <%= render "shared/stats" %>
       </section>
     </aside>
+    <div class="col-md-8">
+      <div class="row btn-action-home">
+        <div class="col-md-4 col-md-offset-1">
+          <%= link_to t(:words_list_btn), words_path,
+            class: "btn btn-success btn-block" %>
+        </div>
+        <div class="col-md-4 col-md-offset-2">
+          <%= link_to t(:lesson_btn), categories_path,
+            class: "btn btn-primary btn-block" %>
+        </div>
+      </div>
+      <hr/>
+      <%= render "shared/activities", activities: @activities %>
+    </div>
   </div>
+
 <% else %>
   <div class="center jumbotron">
     <h1><%= t("greeting") + " " + t("system_name")%></h1>

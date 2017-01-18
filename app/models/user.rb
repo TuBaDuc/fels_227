@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  include Rails.application.routes.url_helpers
+
+  has_many :activities, dependent: :destroy
   has_many :lessons, dependent: :destroy
   has_many :active_relationships, class_name: Relationship.name,
     foreign_key: :follower_id, dependent: :destroy
@@ -71,8 +74,11 @@ class User < ApplicationRecord
     following.include?other_user
   end
 
-  private
+  def activity_info
+    "#{self.name},#{user_path self}"
+  end
 
+  private
   def downcase_email
     self.email = email.downcase
   end

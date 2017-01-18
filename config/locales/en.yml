@@ -180,3 +180,20 @@ en:
   #lesson submit
   lesson_submit_success_mess: "Lesson submit success"
   lesson_submit_fail_mess: "Lesson submit failed"
+  #activiry
+  activities:
+    action_name:
+      login: "login"
+      logout: "logout"
+      follow: "follow"
+      unfollow: "unfollow"
+      start_lesson: "start lesson"
+      finish_lesson: "finish lesson"
+      destroy_lesson: "delete lesson"
+  no_activity_found: "No activity found"
+  activities_title: "Activities"
+  words_list_btn: "Words List"
+  lesson_btn: "Lesson"
+  you_text: "You"
+  at_text: "at"
+  of_text: "of"
