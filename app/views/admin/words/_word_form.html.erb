@@ -6,7 +6,7 @@
     <%= f.text_field :content, class: "form-control" %>
   </div>
   <%= f.label :answers %>
-  <% if @word.new_record? %>
+  <% if @word.new_record? && @word.answers.empty? %>
     <% for i in 1..Settings.default_answer_limit do %>
       <%= f.fields_for :answers, @word.answers.build do |builder| %>
         <%= render "answer_fields", f: builder %>
@@ -17,11 +17,14 @@
         <%= render "answer_fields", f: builder %>
       <% end %>
   <% end %>
-  <p>
+  <p class="text-center">
+    <br/>
     <%= link_to_add_fields(
       raw("<span class='glyphicon glyphicon-plus-sign'></span> #{t :add_answer}"),
       f, :answers) %>
   </p>
   <br/>
+  <div class="text-right">
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  </div>
 <% end %>

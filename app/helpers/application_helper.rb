@@ -21,6 +21,6 @@ module ApplicationHelper
     end
     link_to name, t(:sharp_mark), onclick: "add_fields(this, \"#{association}\",
       \"#{escape_javascript(fields)}\"); return false;",
-      class: "btn btn-default btn-block"
+      class: "btn btn-warning btn-sm"
   end
 end

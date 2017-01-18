@@ -1,7 +1,9 @@
 <% provide :title, t(:detail_category_title) %>
 
 <h2><%= @category.name %></h2>
-<%= image_tag @category.photo.url %>
+<% if @category.photo.url %>
+  <%= image_tag @category.photo.url %>
+<% end %>
 <h3 class="panel-title"><%= t :description_label %></h3>
 <p><%= @category.description %></p>
 

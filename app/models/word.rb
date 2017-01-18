@@ -21,7 +21,7 @@ class Word < ApplicationRecord
   private
   def must_have_a_correct_answer
     unless self.answers.
-      select{|answer| answer.is_correct}.size >= Settings.correct_answers_min
+      select{|answer| answer.is_correct}.size == Settings.correct_answers_limit
       errors.add "", I18n.t(:must_choose_a_correct_answer)
     end
   end
