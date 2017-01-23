@@ -1,2 +1,2 @@
 $("#words").html("<%= escape_javascript(render "words_list", words: @words) %>")
-$("#result_count").html("<%= escape_javascript(t :word_search_result, count: @words.count) %>")
+$("#result_count").html("<%= escape_javascript(render "search_result") %>")
