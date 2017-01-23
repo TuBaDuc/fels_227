@@ -5,8 +5,17 @@ class Admin::CategoriesController < ApplicationController
 
   def index
     @categories = Category.search(params[:name]).order(name: :desc)
-      .paginate page: params[:page],
-        per_page: Settings.admin_category_limit
+    respond_to do |format|
+      format.html {
+        @categories = @categories.paginate(page: params[:page],
+          per_page: Settings.admin_category_limit)
+      }
+      format.xlsx do
+        render xlsx: "index",
+        filename: "categories_#{Time.now.strftime("%Y%m%d%H%M%S")}",
+        disposition: "inline"
+      end
+    end
   end
 
   def new
@@ -49,8 +58,17 @@ class Admin::CategoriesController < ApplicationController
 
   def show
     @words = @category.words.order(created_at: :desc)
-      .paginate page: params[:page],
-        per_page: Settings.admin_word_limit
+    respond_to do |format|
+      format.html {
+        @words = @words.paginate(page: params[:page],
+          per_page: Settings.admin_word_limit)
+      }
+      format.xlsx do
+        render xlsx: "category_words",
+        filename: "category_#{@category.id}_words_#{Time.now.strftime("%Y%m%d%H%M%S")}",
+        disposition: "inline"
+      end
+    end
   end
 
   private

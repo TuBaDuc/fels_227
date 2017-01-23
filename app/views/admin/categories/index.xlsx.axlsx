@@ -1,0 +1,9 @@
+wb = xlsx_package.workbook
+wb.add_worksheet name: "categories" do |sheet|
+  sheet.add_row ["ID", t(:category_name_label), t(:category_description_label),
+    t(:category_word_total_label)]
+  @categories.each do |category|
+    sheet.add_row [category.id, category.name, category.description,
+      category.words.size]
+  end
+end

@@ -170,6 +170,7 @@ en:
     not_learn: "Not learn"
   filter_btn: "Filter"
   word_search_result: "%{count} word(s)"
+  export_excel_btn: "Export Excel"
   #lesson
   lesson_title: "Lesson"
   lesson_category: "Category"
@@ -202,3 +203,9 @@ en:
   at_text: "at"
   of_text: "of"
   too_much_answers_mess: "You have too much answers."
+  #download excel
+  name: "Name"
+  email: "E-mail"
+  type: "Type"
+  user_search_result: "%{count} user(s)"
+  download_label: "Words List"
