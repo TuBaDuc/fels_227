@@ -4,8 +4,17 @@ class Admin::UsersController < ApplicationController
 
   def index
     @users = User.search(params[:name]).order(name: :desc)
-      .paginate page: params[:page],
-        per_page: Settings.admin_user_entry_per_page
+    respond_to do |format|
+      format.html {
+        @users = @users.paginate(page: params[:page],
+          per_page: Settings.admin_user_entry_per_page)
+      }
+      format.xlsx do
+        render xlsx: "index",
+        filename: "users_#{Time.now.strftime("%Y%m%d%H%M%S")}",
+        disposition: "inline"
+      end
+    end
   end
 
   def destroy

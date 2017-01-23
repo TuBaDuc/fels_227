@@ -21,6 +21,9 @@ gem "bootstrap-will_paginate", "0.0.10"
 gem "rubocop", "~> 0.46.0", require: false
 gem "config"
 gem "i18n-js", ">= 3.0.0.rc11"
+gem "rubyzip", "~> 1.1.0"
+gem "axlsx", "2.1.0.pre"
+gem "axlsx_rails"
 
 # Use Puma as the app server
 gem "puma", "3.4.0"

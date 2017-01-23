@@ -1,0 +1,7 @@
+wb = xlsx_package.workbook
+wb.add_worksheet name: "words" do |sheet|
+  sheet.add_row ["ID", t(:words), t(:meaning)]
+  @words.each do |word|
+    sheet.add_row [word.id, word.content, word.answers.correct.first.content]
+  end
+end
