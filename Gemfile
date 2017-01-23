@@ -20,6 +20,7 @@ gem "fog", "1.38.0"
 gem "bootstrap-will_paginate", "0.0.10"
 gem "rubocop", "~> 0.46.0", require: false
 gem "config"
+gem "i18n-js", ">= 3.0.0.rc11"
 
 # Use Puma as the app server
 gem "puma", "3.4.0"
@@ -50,7 +51,8 @@ group :development, :test do
   # Call "byebug" anywhere in the code to stop execution and get a debugger console
   gem "byebug", platform: :mri
   # Use mysql as the database for Active Record
-  gem "mysql2", "0.4.5"
+  #gem "mysql2", "0.4.5"
+  gem "pg"
 end
 
 group :development do

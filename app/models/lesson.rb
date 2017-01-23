@@ -18,7 +18,7 @@ class Lesson < ApplicationRecord
 
   private
   def create_words
-    self.words = self.category.words.order("RAND()")
+    self.words = self.category.words.order("RANDOM()")
       .limit Settings.word_of_lesson_limit
   end
 end

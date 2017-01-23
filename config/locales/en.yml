@@ -116,6 +116,8 @@ en:
   category_delete_success_mess: "Delete category success"
   category_delete_fail_mess: "Delete category failed"
   category_word_total_label: "Total words"
+  category_not_empty: "%{name} is not empty"
+  categories_search: "%{count} categories"
   #admin show detail to add word
   add_a_word: "Add a word"
   words: "Words"
@@ -142,7 +144,8 @@ en:
   category_total_lessons: "Total lessons"
   # word
   add_new_word: "Add new word"
-  add_answer: "Add answer"
+  add_answer: "Add more answer"
+  and_word: "Add word"
   create_word_success_mess: "Create word success"
   create_word_fail_mess: "Create word failed"
   sharp_mark: "#"
@@ -166,6 +169,7 @@ en:
     learned: "Learned"
     not_learn: "Not learn"
   filter_btn: "Filter"
+  word_search_result: "%{count} word(s)"
   #lesson
   lesson_title: "Lesson"
   lesson_category: "Category"
@@ -197,3 +201,4 @@ en:
   you_text: "You"
   at_text: "at"
   of_text: "of"
+  too_much_answers_mess: "You have too much answers."

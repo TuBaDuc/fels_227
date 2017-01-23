@@ -10,7 +10,7 @@ class Category < ApplicationRecord
   validates :description, presence: true, length: {maximum: 255}
 
   def self.search name
-    name ? where("name LIKE ?", "%#{name}%") : all
+    name ? where("lower(name) LIKE ?", "%#{name.downcase}%") : all
   end
 
   def activity_info

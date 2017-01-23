@@ -1,6 +1,7 @@
 class Admin::CategoriesController < ApplicationController
   before_action :logged_in_user, :verify_admin
   before_action :load_category, except: [:index, :new, :create]
+  before_action :verify_category_empty, only: [:destroy]
 
   def index
     @categories = Category.search(params[:name]).order(name: :desc)
@@ -37,6 +38,7 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def destroy
+
     if @category.destroy
       flash[:success] = t :category_delete_success_mess
     else
@@ -56,4 +58,10 @@ class Admin::CategoriesController < ApplicationController
     params.require(:category).permit :name, :description, :photo
   end
 
+  def verify_category_empty
+    if @category.words.any?
+      flash[:danger] = t :category_not_empty, name: @category.name
+      redirect_to admin_categories_path
+    end
+  end
 end
