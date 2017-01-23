@@ -1,5 +1,6 @@
 <% provide :title, t(:add_new_word) %>
-<% provide :button_text, t(:add_new_word) %>
+<% provide :button_text, t(:and_word) %>
 
 <h1><%= t :add_new_word %></h1>
 <%= render "word_form" %>
+<%= hidden_field_tag :max_answer, Settings.max_answer_limit %>

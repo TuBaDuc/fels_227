@@ -28,6 +28,9 @@
 <hr/>
 
 <h3><%= t :word_list %></h3>
+<span id="result_count" class="text-primary">
+  <%= t :word_search_result, count: @words.count%>
+</span>
 
 <div id="words">
   <%= render "words_list", words: @words %>
