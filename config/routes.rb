@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resources :categories do
       resources :words, except: [:index, :show]
     end
+    resources :report, only: [:index]
   end
   resources :categories, only: [:index, :show] do
     resources :lessons, only: [:create]

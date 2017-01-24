@@ -23,6 +23,13 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, presence: true, length: {minimum: 6}, allow_nil: true
 
+  scope :group_by_month, -> start_month, end_month do
+    where("date_trunc('month', created_at) <= '#{end_month}' AND
+      date_trunc('month', created_at) >= '#{start_month}'")
+    .group("to_char(created_at, 'YYYY-MM')")
+    .order("to_char_created_at_yyyy_mm ASC")
+  end
+
   def User.digest string
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
       BCrypt::Engine.cost

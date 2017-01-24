@@ -209,3 +209,17 @@ en:
   type: "Type"
   user_search_result: "%{count} user(s)"
   download_label: "Words List"
+  report_menu: "Report"
+  #chart
+  chart:
+    report_btn: "Report"
+    categories: "Categories"
+    words: "Words"
+    users: "Users"
+    title: "Last 12 Months Grownth Report"
+    sub_title: "Source: framgia.jp"
+    y_axis_title: "New record(s)"
+    get_report_to: "Get report to: "
+    value_axis_tooltip: " new records"
+    title_last_year: "Last Year Grownth Report"
+

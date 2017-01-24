@@ -1,0 +1,42 @@
+Highcharts.chart('container_using_js_file', {
+  title: {
+    text: '<%= t("chart.title") %>',
+    x: -20
+  },
+  subtitle: {
+    text: '<%= t("chart.sub_title") %>',
+    x: -20
+  },
+  xAxis: {
+    categories: <%= raw @chart_categories %>
+  },
+  yAxis: {
+    title: {
+      text: '<%= t("chart.y_axis_title") %>'
+    },
+    plotLines: [{
+      value: 0,
+      width: 1,
+      color: '#808080'
+    }]
+  },
+  tooltip: {
+    valueSuffix: '<%= t("chart.value_axis_tooltip") %>'
+  },
+  legend: {
+    layout: 'vertical',
+    align: 'right',
+    verticalAlign: 'middle',
+    borderWidth: 0
+  },
+  series: [{
+    name: '<%= t("chart.categories") %>',
+    data: <%= raw @categories_data %>
+  }, {
+    name: '<%= t("chart.words") %>',
+    data: <%= raw @words_data %>
+  }, {
+    name: '<%= t("chart.users") %>',
+    data: <%= raw @users_data %>
+  }]
+});

@@ -24,6 +24,7 @@ gem "i18n-js", ">= 3.0.0.rc11"
 gem "rubyzip", "~> 1.1.0"
 gem "axlsx", "2.1.0.pre"
 gem "axlsx_rails"
+gem "lazy_high_charts"
 
 # Use Puma as the app server
 gem "puma", "3.4.0"

@@ -213,6 +213,7 @@ GEM
     formatador (0.2.5)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    hash-deep-merge (0.1.1)
     htmlentities (4.3.4)
     i18n (0.7.0)
     i18n-js (3.0.0.rc15)
@@ -227,6 +228,8 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (2.0.3)
+    lazy_high_charts (1.5.6)
+      hash-deep-merge
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -353,6 +356,7 @@ DEPENDENCIES
   i18n-js (>= 3.0.0.rc11)
   jbuilder (= 2.4.1)
   jquery-rails (= 4.1.1)
+  lazy_high_charts
   listen (= 3.0.8)
   mini_magick (= 4.5.1)
   pg

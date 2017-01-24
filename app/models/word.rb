@@ -18,6 +18,13 @@ class Word < ApplicationRecord
       (select answer_id from results where lesson_id in
         (select id from lessons where user_id = #{user_id})))"}
 
+  scope :group_by_month, -> start_month, end_month do
+    where("date_trunc('month', created_at) <= '#{end_month}' AND
+      date_trunc('month', created_at) >= '#{start_month}'")
+    .group("to_char(created_at, 'YYYY-MM')")
+    .order("to_char_created_at_yyyy_mm ASC")
+  end
+
   private
   def must_have_a_correct_answer
     unless self.answers.

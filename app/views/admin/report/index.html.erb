@@ -1,0 +1,16 @@
+<%= form_tag(admin_report_index_path, method: :get, remote: true) do %>
+  <div class="col-md-3">
+    <%= label_tag t "chart.get_report_to" %>
+    <%= select_month @end_month %>
+    <%= select_year(@end_month,
+      :start_year => Date.today.year,
+      :end_year => 3.years.ago.year) %>
+  </div>
+  <div class="col-md-3">
+    <%= submit_tag t("chart.report_btn"), class: "btn btn-primary btn-xs", id: "report_btn" %>
+  </div>
+<% end %>
+
+<div id="container_using_js_file"></div>
+<br/>
+<%= high_chart "container_using_gem_lazy_highchart", @chart %>
