@@ -21,15 +21,14 @@
       <% end %>
     </div>
     <div class="col-md-1">
-      <%= submit_tag t(:filter_btn), :class => 'btn btn-sm btn-primary'%>
+      <%= f.submit t(:filter_btn), class: "btn btn-sm btn-primary"%>
     </div>
   </div>
 <% end %>
 <hr/>
-
 <h3><%= t :word_list %></h3>
 <span id="result_count" class="text-primary">
-  <%= t :word_search_result, count: @words.count%>
+  <%= render "search_result" %>
 </span>
 
 <div id="words">

@@ -1,0 +1,7 @@
+<%= t :word_search_result, count: @words.count%>
+
+<%= link_to words_path(format: :xlsx, category_id: "#{params[:category_id].nil? ? "all_word" : params[:category_id]}",
+  option: "#{params[:option]}"), class: "btn btn-info btn-xs" do %>
+  <span class="glyphicon glyphicon-download-alt"></span>
+  <%= t :export_excel_btn %>
+<% end %>
